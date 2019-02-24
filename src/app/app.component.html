@@ -1,9 +1,10 @@
 <div>
   <div style="text-align:center">
+    <span *ngIf="update">There is new data to fetch</span>
     <h1>
       Welcome to weather PWA!
     </h1>
-    <h2>
+    <h2 *ngIf="weatherData">
       <p>The temperature in Białystok is {{ temp }}C today.</p>
       <p>Description: {{ description }}</p>
     </h2>

@@ -4,10 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { WeatherService } from './weather.service';
 
 import { AppComponent } from './app.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule],
+  imports: [BrowserModule, HttpClientModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   providers: [WeatherService],
   bootstrap: [AppComponent]
 })
